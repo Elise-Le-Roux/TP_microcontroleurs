@@ -23,5 +23,6 @@ int MyGPIO_Read ( GPIO_TypeDef * GPIO , char GPIO_Pin ) ; // renvoie 0 ou autre 
 void MyGPIO_Set ( GPIO_TypeDef * GPIO , char GPIO_Pin ) ;
 void MyGPIO_Reset ( GPIO_TypeDef * GPIO , char GPIO_Pin ) ;
 void MyGPIO_Toggle ( GPIO_TypeDef * GPIO , char GPIO_Pin ) ;
+void tests(void);
 
 #endif

@@ -384,9 +384,9 @@
           <GroupName>MesSources</GroupName>
           <Files>
             <File>
-              <FileName>principal.c</FileName>
+              <FileName>tests.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Source\principal.c</FilePath>
+              <FilePath>.\Source\tests.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -791,9 +791,9 @@
           <GroupName>MesSources</GroupName>
           <Files>
             <File>
-              <FileName>principal.c</FileName>
+              <FileName>tests.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Source\principal.c</FilePath>
+              <FilePath>.\Source\tests.c</FilePath>
             </File>
           </Files>
         </Group>

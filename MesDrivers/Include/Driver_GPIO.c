@@ -4,7 +4,7 @@ void MyGPIO_Init ( MyGPIO_Struct_TypeDef * GPIOStructPtr ) {
 	char Pin = GPIOStructPtr->GPIO_Pin;
 	char Conf = GPIOStructPtr->GPIO_Conf;
 	
-	//RCC->APB2ENR |= (0x01 << 2) | (0x01 << 3) | (0x01 << 4) ;
+	RCC->APB2ENR |= (0x01 << 2) | (0x01 << 3) | (0x01 << 4) ;
 	
 	if ( Pin <= 7) {
 		GPIOStructPtr->GPIO->CRL &= ~(0xF << 4*Pin); 

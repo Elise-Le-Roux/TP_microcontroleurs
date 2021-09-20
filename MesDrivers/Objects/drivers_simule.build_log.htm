@@ -17,21 +17,29 @@ Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.34.0.0
 Dialog DLL:      DARMSTM.DLL V1.68.0.0
-Target DLL:      UL2CM3.DLL V1.163.9.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
 Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
 U:\4IR\STM32\MesProjetsSTM32\MesDrivers\drivers.uvprojx
-Project File Date:  09/19/2021
+Project File Date:  09/20/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Simulé'
+compiling tests.c...
+.\Include\Driver_GPIO.h(4): error:  #5: cannot open source input file "tests.c": No such file or directory
+  #include "tests.c"
+Source\tests.c: 0 warnings, 1 error
 compiling principal.c...
+.\Include\Driver_GPIO.h(4): error:  #5: cannot open source input file "tests.c": No such file or directory
+  #include "tests.c"
+Source\principal.c: 0 warnings, 1 error
 compiling Driver_GPIO.c...
-linking...
-Program Size: Code=712 RO-data=252 RW-data=0 ZI-data=1024  
-".\Objects\drivers_simule.axf" - 0 Error(s), 0 Warning(s).
+Include\Driver_GPIO.h(4): error:  #5: cannot open source input file "tests.c": No such file or directory
+  #include "tests.c"
+Include\Driver_GPIO.c: 0 warnings, 1 error
+".\Objects\drivers_simule.axf" - 3 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -59,10 +67,11 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:1.0.0
       Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
       Source file:   Device\Source\system_stm32f10x.c
-      Include file:  RTE_Driver\Config\RTE_Device.h
-Build Time Elapsed:  00:00:00
+Target not created.
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

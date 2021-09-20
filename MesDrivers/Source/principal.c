@@ -1,5 +1,6 @@
 #include "Driver_GPIO.h"
 
+
 int main ( void ) {
 	
 	// Definitions
@@ -18,7 +19,6 @@ int main ( void ) {
 	GPIO_Struct_PC13.GPIO_Conf = In_Floating;
 	MyGPIO_Init(&GPIO_Struct_PC13);
 	
-	RCC->APB2ENR |= (0x01 << 2) | (0x01 << 3) | (0x01 << 4) ;
 	
 do
 {
