@@ -4,7 +4,10 @@ void MyGPIO_Init ( MyGPIO_Struct_TypeDef * GPIOStructPtr ) {
 	char Pin = GPIOStructPtr->GPIO_Pin;
 	char Conf = GPIOStructPtr->GPIO_Conf;
 	
-	RCC->APB2ENR |= (0x01 << 2) | (0x01 << 3) | (0x01 << 4) ;
+	if (GPIOStructPtr->GPIO == GPIOA) RCC->APB2ENR |= RCC_APB2ENR_IOPAEN ;
+	if (GPIOStructPtr->GPIO == GPIOB) RCC->APB2ENR |= RCC_APB2ENR_IOPBEN ;
+	if (GPIOStructPtr->GPIO == GPIOC) RCC->APB2ENR |= RCC_APB2ENR_IOPCEN ;
+	if (GPIOStructPtr->GPIO == GPIOD) RCC->APB2ENR |= RCC_APB2ENR_IOPDEN ;
 	
 	if ( Pin <= 7) {
 		GPIOStructPtr->GPIO->CRL &= ~(0xF << 4*Pin); 
