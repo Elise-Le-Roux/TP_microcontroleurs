@@ -403,6 +403,16 @@
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_GPIO.h</FilePath>
             </File>
+            <File>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Include\MyTimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\MyTimer.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -809,6 +819,16 @@
               <FileName>Driver_GPIO.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_GPIO.h</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Include\MyTimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\MyTimer.h</FilePath>
             </File>
           </Files>
         </Group>
