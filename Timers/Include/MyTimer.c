@@ -1,5 +1,7 @@
 #include "MyTimer.h"
 
+void (* IT_function ) ( void ) ; /* Pointeur de fonction */
+
 
 void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ) {
 	
@@ -15,7 +17,7 @@ void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ) {
 }
 
 
-void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio ) {
+void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio , void (* IT_function ) ( void ) ) {
 	char num_IT;
 	
 	if (Timer == TIM1) num_IT = 25;        // Sélectionne le numéro d'interruption en fonction du timer

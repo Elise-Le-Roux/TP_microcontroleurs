@@ -4,16 +4,16 @@
 
 int main ( void ) {
 	
-//	TIM2->PSC = 0x1770; // 6000
-//	TIM2->ARR = 0x1770;
+//	TIM2->PSC = 0x1770; // 6000 
+//	TIM2->ARR = 0x1770; 
 //	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN; // Clock enable
 //	TIM2->CR1 |=  (1 << 0); // Counter enable
 	
 	
 	MyTimer_Struct_TypeDef TIM;
 	TIM.Timer = TIM2;
-	TIM.ARR = 0x1770;
-	TIM.PSC = 0x1770;
+	TIM.ARR = 0x7D0; // 2000
+	TIM.PSC = 0x4650; // 18k
 	
 	MyTimer_Base_Init(&TIM);
 	//MyTimer_Base_Stop(TIM.Timer);
