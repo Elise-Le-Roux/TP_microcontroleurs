@@ -36,6 +36,36 @@ void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ) ;
 void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio , void (* IT_function ) ( void ) ) ;
 
 
+
+
+/*
+**************************************************************************************************
+* @brief
+* @param : - TIM_TypeDef * Timer : Timer concerne
+           - char Channel : de 1 a 4
+* @Note : Active le channel spécifié sur le timer spécifié
+* la gestion de la configuration I/O n’est pas faite dans cette fonction
+* ni le réglage de la période de la PWM (ARR, PSC)
+**************************************************************************************************
+*/
+void MyTimer_PWM( TIM_TypeDef * Timer , char Channel ) ;
+
+
+
+
+/*
+**************************************************************************************************
+* @brief
+* @param : - TIM_TypeDef * Timer : Timer concerne
+           - char Duty_Cycle : rapport cyclique de 0 a 100%
+					 - char Channel : de 1 a 4
+* @Note : 
+**************************************************************************************************
+*/
+void Set_Duty_Cycle (TIM_TypeDef * Timer, char Channel, char Duty_Cycle) ;
+
+
+
 #define MyTimer_Base_Start( Timer ) ( Timer->CR1 |= (1 << 0) )
 #define MyTimer_Base_Stop( Timer ) ( Timer->CR1 &= ~(1 << 0) )
 #endif

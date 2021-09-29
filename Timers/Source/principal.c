@@ -20,9 +20,9 @@ int main ( void ) {
 	
 	// Configuration du timer
 	MyTimer_Struct_TypeDef TIM;
-	TIM.Timer = TIM1;
-	TIM.ARR = 2000; 
-	TIM.PSC = 18000; 
+	TIM.Timer = TIM3;
+	TIM.ARR = 719; //2000
+	TIM.PSC = 0; // 18000
 	
 	//TIM2->CR1 |= TIM_CR1_URS;
 	
@@ -32,9 +32,24 @@ int main ( void ) {
 	GPIO_Struct.GPIO_Conf = Out_Ppull;
 	MyGPIO_Init(&GPIO_Struct);
 	
+	// Configuration de la diode PA.6
+	GPIO_Struct.GPIO = GPIOA;
+	GPIO_Struct.GPIO_Pin = 6;
+	GPIO_Struct.GPIO_Conf = AltOut_Ppull;
+	MyGPIO_Init(&GPIO_Struct);
+	
 	MyTimer_Base_Init(&TIM);
 	
-	MyTimer_ActiveIT(TIM1, 1, CallBack);
+	//MyTimer_ActiveIT(TIM1, 1, CallBack);
+	
+	// PWM à 100kHz avec un rapport cyclique de 20% sur le Timer 3 et le canal 1.
+	MyTimer_PWM (TIM3, 1);
+	Set_Duty_Cycle(TIM3, 1, 20);
+	
+	
+	
+	
+	
 	
 	
 do

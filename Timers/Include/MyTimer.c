@@ -34,6 +34,46 @@ void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio , void (* IT_function ) 
 }
 
 
+void MyTimer_PWM( TIM_TypeDef * Timer , char Channel ) {
+	if (Channel == 1) {
+		Timer->CCMR1 &= ~TIM_CCMR1_OC1M_0;                   // Mode 1 de la PWM
+		Timer->CCMR1 |= TIM_CCMR1_OC1M_1| TIM_CCMR1_OC1M_2;
+		Timer->CCER |= TIM_CCER_CC1E;                        // Validation de la sortie du canal
+	}
+	else if (Channel == 2) {
+		Timer->CCMR1 &= ~TIM_CCMR1_OC2M_0;
+		Timer->CCMR1 |= TIM_CCMR1_OC2M_1| TIM_CCMR1_OC2M_2;
+		Timer->CCER |= TIM_CCER_CC2E;
+	}
+	else if (Channel == 3) {
+		Timer->CCMR2 &= ~TIM_CCMR2_OC3M_0;
+		Timer->CCMR2 |= TIM_CCMR2_OC3M_1| TIM_CCMR2_OC3M_2;
+		Timer->CCER |= TIM_CCER_CC3E;
+	}
+	else if (Channel == 4) {
+		Timer->CCMR2 &= ~TIM_CCMR2_OC4M_0;
+		Timer->CCMR2 |= TIM_CCMR2_OC4M_1| TIM_CCMR2_OC4M_2;
+		Timer->CCER |= TIM_CCER_CC4E;
+	}
+}	
+	
+void Set_Duty_Cycle (TIM_TypeDef * Timer, char Channel, char Duty_Cycle) {
+	if (Channel == 1) {
+		Timer->CCR1 = (int) (Timer->ARR)*Duty_Cycle/100;
+	}
+	else if (Channel == 2) {
+		Timer->CCR2 = (int) (Timer->ARR)*Duty_Cycle/100;
+	}
+	else if (Channel == 3) {
+		Timer->CCR3 = (int) (Timer->ARR)*Duty_Cycle/100;
+	}
+	else if (Channel == 4) {
+		Timer->CCR4 = (int) (Timer->ARR)*Duty_Cycle/100;
+	}
+}
+
+
+
 
 /********************************************
 ****              HANDLERS               ****
